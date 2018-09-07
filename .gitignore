@@ -1,0 +1,10 @@
+*.pyc
+*~
+__pycache__
+pyvenv
+pyvenv.cfg
+/Include
+/Scripts
+/Lib
+.idea
+.DS_Store
