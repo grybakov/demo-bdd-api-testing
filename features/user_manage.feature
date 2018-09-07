@@ -60,4 +60,3 @@ Feature: User management
     |Georg R|QA Engineer|Automation QA engineer|
     |Pavel K|Senior Programmer|Team Lead|
 
-

@@ -4,7 +4,7 @@ Demo tests written for the API service [ReqRes](https://reqres.in/) (use REST)
 
 Example Gherkin case
 ---------------
-More tests by [link](https://github.com/grybakov/MerchRoutes/blob/master/features/)
+More tests by [link](https://github.com/grybakov/demo-bdd-api-testing/tree/master/features)
 ```gherkin
   Scenario Outline: Create new user and update job fields
     Given I send POST request on resource url "/api/users" using: "<name>" value to "name" field, "<job>" value to "job" field
@@ -17,14 +17,14 @@ More tests by [link](https://github.com/grybakov/MerchRoutes/blob/master/feature
     # And structure of the response is correct
 
     Examples:
-    |name|job|new_job|
-    |Georg R|QA Engineer|Automation QA engineer|
-    |Pavel K|Senior Programmer|Team Lead|
+    | name  |       job       |        new_job       |
+    |Georg R|   QA Engineer   |Automation QA engineer|
+    |Pavel K|Senior Programmer|      Team Lead       |
 ```
 
 Example Steps
 ---------------
-More steps by [link](https://github.com/grybakov/MerchRoutes/blob/master/features/steps)
+More steps by [link](https://github.com/grybakov/demo-bdd-api-testing/tree/master/features/steps)
 ```python
 @given('I send POST request on resource url "{url}" using: "{name}" value to "name" field, "{job}" value to "job" field')
 def step_impl(context, url, name, job):
