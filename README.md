@@ -1,6 +1,6 @@
 Demo: Using BDD in API automation testing
 ====================
-Demo tests written for the API service [ReqRes](https://reqres.in/) (use REST)
+Demo tests written for the API service [ReqRes](https://reqres.in/) (use REST). Check: codes, field values, data structures according to the schemes (without serious use of the test design).
 
 Example Gherkin case
 ---------------
@@ -14,7 +14,7 @@ More tests by [link](https://github.com/grybakov/demo-bdd-api-testing/tree/maste
     Then the status code should be 200
     And it should have the field "name" containing the value "<name>"
     And it should have the field "job" containing the value "<new_job>"
-    # And structure of the response is correct
+    And request structure corresponds to the scheme "update_user.schema"
 
     Examples:
     | name  |       job       |        new_job       |

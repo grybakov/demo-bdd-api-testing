@@ -1,0 +1,40 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"$id": "https://reqres.in/api/register",
+	"type": "object",
+	"title": "The Root Schema",
+	"required": [
+		"name",
+		"job",
+		"updatedAt"
+	],
+	"properties": {
+		"name": {
+			"$id": "#/properties/name",
+			"type": "string",
+			"title": "The Name Schema",
+			"examples": [
+				"morpheus"
+			],
+			"pattern": "^(.*)$"
+		},
+		"job": {
+			"$id": "#/properties/job",
+			"type": "string",
+			"title": "The Job Schema",
+			"examples": [
+				"zion resident"
+			],
+			"pattern": "^(.*)$"
+		},
+		"updatedAt": {
+			"$id": "#/properties/updatedAt",
+			"type": "string",
+			"title": "The Updatedat Schema",
+			"examples": [
+				"2018-09-07T14:42:12.979Z"
+			],
+			"pattern": "^(.*)$"
+		}
+	}
+}

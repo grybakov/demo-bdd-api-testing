@@ -9,12 +9,13 @@ Feature: User management
     When I retrieve the results
     Then the status code should be 201
     And it should have the field "token" containing the not empty value
-    # And structure of the response is correct
+    And request structure corresponds to the scheme "register_success.schema"
 
     Examples:
     |email|password|
     |qwerty@gmail.com|qwerty123|
-    |django123@mail.ru|django123|
+    |Django123@mail.ru|django123|
+    |Django@russia.ru|Django|
 
 
   Scenario Outline: Unsuccessful registration of a new user
@@ -22,7 +23,7 @@ Feature: User management
     When I retrieve the results
     Then the status code should be 400
     And it should have the field "error" containing the value "Missing password"
-    # And structure of the response is correct
+    And request structure corresponds to the scheme "register_unsuccess.schema"
 
     Examples:
     |email|
@@ -37,7 +38,7 @@ Feature: User management
     And it should have the field "id" containing the not empty value
     And it should have the field "name" containing the value "<name>"
     And it should have the field "job" containing the value "<job>"
-    # And structure of the response is correct
+    And request structure corresponds to the scheme "create_user.schema"
 
     Examples:
     |name|job|
@@ -53,10 +54,27 @@ Feature: User management
     Then the status code should be 200
     And it should have the field "name" containing the value "<name>"
     And it should have the field "job" containing the value "<new_job>"
-    # And structure of the response is correct
+    And request structure corresponds to the scheme "update_user.schema"
 
     Examples:
     |name|job|new_job|
     |Georg R|QA Engineer|Automation QA engineer|
     |Pavel K|Senior Programmer|Team Lead|
+
+
+  Scenario: Get single user
+    Given I send GET request on resource url "/api/users/2"
+    When I retrieve the results
+    Then the status code should be 200
+    And it should have the field "data" containing the not empty value
+    And it should have the field "id" containing the value "2" in "data" field
+    And it should have the field "first_name" containing the value "Janet" in "data" field
+    And it should have the field "last_name" containing the value "Weaver" in "data" field
+    And request structure corresponds to the scheme "single_user.schema"
+
+
+  Scenario: Single user not found
+    Given I send GET request on resource url "/api/users/777"
+    When I retrieve the results
+    Then the status code should be 404
 

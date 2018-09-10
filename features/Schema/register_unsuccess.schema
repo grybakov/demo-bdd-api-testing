@@ -1,0 +1,20 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"$id": "https://reqres.in/api/register",
+	"type": "object",
+	"title": "The Root Schema",
+	"required": [
+		"error"
+	],
+	"properties": {
+		"error": {
+			"$id": "#/properties/error",
+			"type": "string",
+			"title": "The Error Schema",
+			"examples": [
+				"Missing password"
+			],
+			"pattern": "^(.*)$"
+		}
+	}
+}
