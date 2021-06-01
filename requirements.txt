@@ -7,4 +7,4 @@ parse==1.8.4
 parse-type==0.4.2
 requests==2.19.1
 six==1.11.0
-urllib3==1.23
+urllib3==1.26.5
